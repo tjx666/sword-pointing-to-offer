@@ -1,0 +1,48 @@
+{
+    "name": "sword-pointing-to-offer",
+    "version": "1.0.0",
+    "description": "Brushing sword-pointing-to-offer with JavaScript",
+    "main": "index.js",
+    "repository": "https://github.com/tjx666/leetcode-javascript",
+    "author": "YuTengjing",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "test": "mocha",
+        "coverage": "nyc --reporter=lcov yarn test",
+        "test-report": "mocha --reporter mochawesome",
+        "lint": "eslint -c .eslintrc.js --ext .js ./{src,test}/**/*.js",
+        "clean": "rimraf -rf ./.nyc_output ./coverage ./mochawesome-report"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && yarn test"
+        }
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint -c .eslintrc.js"
+        ],
+        "*.{js,json,md}": [
+            "prettier --write"
+        ]
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "benchmark": "^2.1.4",
+        "codecov": "^3.6.5",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.1.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.2",
+        "husky": "^4.2.5",
+        "intelli-espower-loader": "^1.0.1",
+        "lint-staged": "^10.1.4",
+        "lodash": "^4.17.15",
+        "mocha": "^7.1.1",
+        "mochawesome": "^6.1.0",
+        "nyc": "^15.0.1",
+        "power-assert": "^1.6.1",
+        "prettier": "^2.0.4"
+    }
+}
