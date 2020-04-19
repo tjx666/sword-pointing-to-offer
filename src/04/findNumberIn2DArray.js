@@ -3,7 +3,7 @@
  * 思路：利用题目给定的限定条件，同一行往右递增，同一列往下递增，考虑从右上角开始查找
  * 时间复杂度：最多需要遍历 m + n 次也就是最后遍历到左下角
  * 空间复杂度：0
- * 
+ *
  * @param {number[][]} matrix
  * @param {number} target
  * @return {boolean}
@@ -29,7 +29,6 @@ function findNumberIn2DArray(matrix, target) {
     let i = 0;
     let j = array1DLength - 1;
     while (i < array2DLength && j >= 0) {
-        console.log(i, j);
         const val = matrix[i][j];
         if (val === target) return true;
 
@@ -42,3 +41,5 @@ function findNumberIn2DArray(matrix, target) {
 
     return false;
 }
+
+module.exports = findNumberIn2DArray;
